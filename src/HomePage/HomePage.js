@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import propTypes from 'prop-types';
 
-class HomePage extends Component {
+export class HomePage extends Component {
   constructor(props) {
     super(props)
     
@@ -13,13 +14,14 @@ class HomePage extends Component {
   render() {
     return (
       <div className="homepage">
-        <button className="random"></button>
-        <button className="save"></button>
+        <button className="random" onClick={this.props.retrieveFakeYou}>random</button>
+        <button className="save">save</button>
       </div>
     )
   }
 }
 
-HomePage.PropTypes = {
+HomePage.propTypes = {
+  retrieveFakeYou: propTypes.func
 
 }

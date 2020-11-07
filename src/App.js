@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HomePage from './src/HomePage/HomePage.js'
+import { HomePage } from './HomePage/HomePage.js'
 import './App.css';
 
 class App extends Component {
@@ -9,6 +9,11 @@ class App extends Component {
 
   componentDidMount() {
 
+  }
+
+  retrieveFakeYou = () => {
+    this.retrieveRandomImage();
+    this.retrieveRandomInfo();
   }
 
   retrieveRandomImage = () => {
@@ -29,8 +34,7 @@ class App extends Component {
           <button className="favorites">Favorites</button>
         </header>
         <HomePage 
-        retrieveRandomImage={this.retrieveRandomImage} 
-        retrieveRandomInfo={this.retrieveRandomInfo}
+        retrieveFakeYou={this.retrieveFakeYou}
         />
       </div>
     );
