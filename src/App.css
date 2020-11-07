@@ -15,3 +15,8 @@
   /* height: 15vh; */
   padding: 5vh
 }
+
+.favorites {
+  height: 5vh;
+  font-weight: bolder;
+}
