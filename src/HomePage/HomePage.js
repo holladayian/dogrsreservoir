@@ -11,10 +11,14 @@ export class HomePage extends Component {
     }
   }
 
-  render() {
+  setFakeYous = () => {
+    this.props.retrieveFakeYou()
+  }
+
+  render = () => {
     return (
       <div className="homepage">
-        <button className="random" onClick={this.props.retrieveFakeYou}>random</button>
+        <button className="random" onClick={this.setFakeYous}>random</button>
         <button className="save">save</button>
       </div>
     )
