@@ -21,7 +21,7 @@ class App extends Component {
 
   }
 
-  retrieveNewDog = async() => {
+  retrieveNewDog = async() => { 
     const newDog = await getNewDog();
     this.setState({ currentDog: newDog.message })
     return newDog.message
