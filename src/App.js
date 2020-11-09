@@ -32,12 +32,18 @@ class App extends Component {
     console.log(this.state.savedDogs)
   }
 
-  render() {
+  changeButton = () => {
+    this.setState( {favoritesView: !this.state.favoritesView} )
+  }
+
+  render= () => {
     return (
       <div className="dogsResivour">
         <header className="App-header">
           <h1>Dog Resivour</h1>
-          <Link to='/favorites' className="favorites">Favorites</Link>
+          {this.state.favoritesView ? 
+          <Link to='/favorites' className="favorites" onClick={() => this.changeButton()}>Favorites</Link> :
+          <Link to='/homepage' className="homepage" onClick={() => this.changeButton()}>Home</Link>}
         </header>
         <Switch>
           <Route
