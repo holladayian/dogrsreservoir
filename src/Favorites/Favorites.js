@@ -1,14 +1,18 @@
 import React from 'react';
 
-export const Favorites = () => {
+export const Favorites = (props) => {
 
 
-  showDogs = () => {
-    this.props.savedDogs.map((dog, i) => {
-      <img src={this.props.currentDog} className="dog-image"></img>
+  const showDogs = () => {
+    console.log(props.savedDogs)
+    props.savedDogs.map((dog, i) => {
+      <img src={dog} className="dog-image"></img>
     })
   }
+
   return (
-    this.showDogs()
+    <div>
+      {showDogs()}
+    </div>
   )
 }

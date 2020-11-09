@@ -3,6 +3,7 @@ import { HomePage } from './HomePage/HomePage.js';
 import { Favorites } from './Favorites/Favorites.js';
 import { getNewDog } from './apiCalls/dogcalls.js';
 import { Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -11,7 +12,8 @@ class App extends Component {
 
     this.state = {
       currentDog: '',
-      savedDogs: []
+      savedDogs: [],
+      favoritesView: false
     }
   }
 
@@ -35,7 +37,7 @@ class App extends Component {
       <div className="dogsResivour">
         <header className="App-header">
           <h1>Dog Resivour</h1>
-          <button className="favorites">Favorites</button>
+          <Link to='/favorites' className="favorites">Favorites</Link>
         </header>
         <Switch>
           <Route
