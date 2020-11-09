@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { HomePage } from './HomePage/HomePage.js'
+import { HomePage } from './HomePage/HomePage.js';
+import { getNewDog } from './apiCalls/dogcalls.js';
 import './App.css';
 
 class App extends Component {
@@ -11,30 +12,32 @@ class App extends Component {
 
   }
 
-  retrieveFakeYou = () => {
-    this.retrieveRandomImage();
-    this.retrieveRandomInfo();
-  }
+  // retrieveFakeYou = () => {
+  //   this.retrieveRandomImage();
+  //   this.retrieveRandomInfo();
+  // }
 
-  retrieveRandomImage = () => {
-    // make a fetch call here
-    console.log('retrieveRandomImage')
-  }
+  // retrieveRandomImage = () => {
+  //   // make a fetch call here
+  //   console.log('retrieveRandomImage')
+  // }
 
-  retrieveRandomInfo = () => {
+  retrieveNewDog = async() => {
     // make fetch call here
-    console.log('retrieveRandomInfo')
+    const newDog = await getNewDog()
+    console.log('newDog', newDog)
+    
   }
 
   render() {
     return (
-      <div className="fakeYous">
+      <div className="dogsResivour">
         <header className="App-header">
-          <h1>FakeYous</h1>
+          <h1>Dog Resivour</h1>
           <button className="favorites">Favorites</button>
         </header>
         <HomePage 
-        retrieveFakeYou={this.retrieveFakeYou}
+        retrieveFakeYou={this.retrieveNewDog}
         />
       </div>
     );
