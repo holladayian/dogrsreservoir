@@ -46,14 +46,6 @@ class App extends Component {
             )
           }}
         />
-        <Route
-          exact path='/favorites'
-          render={() => {
-            return (
-              <div>favorites</div>
-            )
-          }}
-        />
       </div>
     );
   }
