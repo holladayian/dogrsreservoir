@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { HomePage } from './HomePage/HomePage.js';
 import { getNewDog } from './apiCalls/dogcalls.js';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -36,6 +36,7 @@ class App extends Component {
           <h1>Dog Resivour</h1>
           <button className="favorites">Favorites</button>
         </header>
+        <Switch>
         <Route
           exact path='/homepage'
           render={() => {
@@ -54,6 +55,15 @@ class App extends Component {
             )
           }}
         />
+        <Route
+          exact path='*'
+          render={() => {
+            return (
+              <div>hmm, this isn't a proper url</div>
+            )
+          }}
+        />
+        </Switch>
       </div>
     );
   }
