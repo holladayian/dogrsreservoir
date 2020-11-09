@@ -43,11 +43,11 @@ class App extends Component {
           <h1>Dog Resivour</h1>
           {this.state.favoritesView ? 
           <Link to='/favorites' className="favorites" onClick={() => this.changeButton()}>Favorites</Link> :
-          <Link to='/homepage' className="homepage" onClick={() => this.changeButton()}>Home</Link>}
+          <Link to='/' className="homepage" onClick={() => this.changeButton()}>Home</Link>}
         </header>
         <Switch>
           <Route
-            exact path='/homepage'
+            exact path='/'
             render={() => {
               return (
                 <HomePage 
@@ -72,7 +72,7 @@ class App extends Component {
             exact path='*'
             render={() => {
               return (
-                <div>hmm, this isn't a proper url</div>
+                <div>hmm, this isn't the correct url</div>
               )
             }}
           />

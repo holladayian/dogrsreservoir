@@ -28,7 +28,7 @@ export class HomePage extends Component {
       <div className="homepage">
         <img src={this.props.currentDog} className="dog-image"></img>
         <button className="random" onClick={this.setNewDog}>random</button>
-        <button className="save" onClick={e => this.saveDog(e)}>save</button>
+        <button className="save" onClick={e => this.saveDog(e)}>favorite</button>
       </div>
     )
   }
