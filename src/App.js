@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { HomePage } from './HomePage/HomePage.js';
+import { Favorites } from './Favorites/Favorites.js';
 import { getNewDog } from './apiCalls/dogcalls.js';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
@@ -53,7 +54,9 @@ class App extends Component {
             exact path='/favorites'
             render={() => {
               return (
-                <div>favorites</div>
+                <Favorites 
+                savedDogs={this.state.savedDogs}
+                />
               )
             }}
           />
