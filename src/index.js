@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 // import History from './History.js';
@@ -11,9 +11,9 @@ import * as serviceWorker from './serviceWorker';
 // window.onload = History.push('/homepage')
 
 ReactDOM.render(
-  <BrowserRouter>
+  <Router>
     <App />
-  </BrowserRouter>,
+  </Router>,
   document.getElementById('root')
 );
 
