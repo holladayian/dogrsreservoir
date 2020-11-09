@@ -12,7 +12,17 @@ class App extends Component {
   componentDidMount() {
 
   }
-  
+
+  // retrieveFakeYou = () => {
+  //   this.retrieveRandomImage();
+  //   this.retrieveRandomInfo();
+  // }
+
+  // retrieveRandomImage = () => {
+  //   // make a fetch call here
+  //   console.log('retrieveRandomImage')
+  // }
+
   retrieveNewDog = async() => {
     const newDog = await getNewDog()
     return newDog.message
@@ -27,32 +37,32 @@ class App extends Component {
           <button className="favorites">Favorites</button>
         </header>
         <Switch>
-          <Route
-            exact path='/homepage'
-            render={() => {
-              return (
-                <HomePage 
-                retrieveNewDog={this.retrieveNewDog}
-                />
-              )
-            }}
-          />
-          <Route
-            exact path='/favorites'
-            render={() => {
-              return (
-                <div>favorites</div>
-              )
-            }}
-          />
-          <Route
-            exact path='*'
-            render={() => {
-              return (
-                <div>hmm, this isn't a proper url</div>
-              )
-            }}
-          />
+        <Route
+          exact path='/homepage'
+          render={() => {
+            return (
+              <HomePage 
+              retrieveNewDog={this.retrieveNewDog}
+              />
+            )
+          }}
+        />
+        <Route
+          exact path='/favorites'
+          render={() => {
+            return (
+              <div>favorites</div>
+            )
+          }}
+        />
+        <Route
+          exact path='*'
+          render={() => {
+            return (
+              <div>hmm, this isn't a proper url</div>
+            )
+          }}
+        />
         </Switch>
       </div>
     );
