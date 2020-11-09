@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { HomePage } from './HomePage/HomePage.js';
 import { getNewDog } from './apiCalls/dogcalls.js';
+=======
+>>>>>>> 52c8663cdeec0a801841e618efccf5f30935f326
 import './App.css';
 
 class App extends Component {
