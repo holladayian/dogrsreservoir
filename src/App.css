@@ -16,10 +16,17 @@
   margin-bottom: 5vh
 }
 
-/* .favorites {
-  height: 5vh;
+.favorites {
+  height: 70vh;
   font-weight: bolder;
-} */
+}
+
+
+.dog-image {
+  height: 20vh;
+  border: 2vh solid;
+  border-color: #202d47;
+}
 
 
 

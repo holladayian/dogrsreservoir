@@ -1,4 +1,5 @@
 import React from 'react';
+import './Favorites.css';
 
 export const Favorites = (props) => {
 
@@ -10,7 +11,7 @@ export const Favorites = (props) => {
   }
 
   return (
-    <div>
+    <div className="favorites">
       {showDogs()}
     </div>
   )
