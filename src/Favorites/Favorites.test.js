@@ -1,5 +1,5 @@
 import { Favorites } from './Favorites.js';
-import { screen, render, waitFor, getAllByTestId } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 
 describe('Favorites', () => {
 
