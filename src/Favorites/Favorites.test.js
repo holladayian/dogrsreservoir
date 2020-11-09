@@ -15,12 +15,14 @@ describe('Favorites', () => {
     const testid1 = screen.queryByTestId('test-0');
     const testid2 = screen.queryByTestId('test-1');
     const testid3 = screen.queryByTestId('test-2');
-    expect(testid1).toBeInTheDocument()
-    expect(testid2).toBeInTheDocument()
-    expect(testid3).toBeInTheDocument()
+    expect(testid1).toBeInTheDocument();
+    expect(testid2).toBeInTheDocument();
+    expect(testid3).toBeInTheDocument();
     
-    const testid4 = screen.queryByTestId('test-3')
-    expect(testid4).toEqual(null)
+
+    // sad
+    const testid4 = screen.queryByTestId('test-3');
+    expect(testid4).toEqual(null);
 
     const home = screen.queryByTestId('homepage');
     expect(home).toEqual(null);
