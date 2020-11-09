@@ -1,13 +1,13 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import './Favorites.css';
 
 export const Favorites = (props) => {
-
-
+  
   const showDogs = () => {
     if(props.savedDogs.length) {
       return props.savedDogs.map((dog, i) => {
-        return <img src={dog} className="dog-image" key={i} data-testid={`test-${i}`}></img>
+        return <img src={dog} className="dog-image" key={i} data-testid={`test-${i}`} alt='random-dog'></img>
       })
     } else {
       return
@@ -19,4 +19,8 @@ export const Favorites = (props) => {
       {showDogs()}
     </div>
   )
+}
+
+Favorites.propTypes = {
+  savedDogs: propTypes.array
 }

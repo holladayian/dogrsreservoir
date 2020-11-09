@@ -30,5 +30,4 @@ HomePage.propTypes = {
   currentDog: propTypes.string,
   retrieveNewDog: propTypes.func,
   saveDog: propTypes.func
-
 }
