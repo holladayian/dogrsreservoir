@@ -1,25 +1,46 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { HomePage } from './HomePage/HomePage.js';
+import { getNewDog } from './apiCalls/dogcalls.js';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount() {
+
+  }
+
+  // retrieveFakeYou = () => {
+  //   this.retrieveRandomImage();
+  //   this.retrieveRandomInfo();
+  // }
+
+  // retrieveRandomImage = () => {
+  //   // make a fetch call here
+  //   console.log('retrieveRandomImage')
+  // }
+
+  retrieveNewDog = async() => {
+    const newDog = await getNewDog()
+    return newDog.message
+    
+  }
+
+  render() {
+    return (
+      <div className="dogsResivour">
+        <header className="App-header">
+          <h1>Dog Resivour</h1>
+          <button className="favorites">Favorites</button>
+        </header>
+        <HomePage 
+        retrieveNewDog={this.retrieveNewDog}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
