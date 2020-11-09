@@ -1,7 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter } from "react-router-dom";
 import userEvent from  '@testing-library/user-event';
 import App from './App';
+import { getNewDog } from './apiCalls/dogcalls';
+jest.mock('./apiCalls/dogcalls');
+
 
 describe('App', () => {
   
@@ -31,7 +34,7 @@ describe('App', () => {
     expect(homeButton).toEqual(null);
   })
   
-  it('2. should be able to switch between HomePage and Favorites ', () => {
+  it('2. should be able to switch between HomePage and Favorites', () => {
     
       render(
         <BrowserRouter>
@@ -72,5 +75,52 @@ describe('App', () => {
     expect(favePage).toEqual(null);
     expect(homeButton).toEqual(null);
     expect(homePage).toBeInTheDocument();
+  })
+  
+  it('3. should be able call getNewDog', async() => {
+    getNewDog.mockResolvedValueOnce('newDog1')
+    render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
+    
+    let newDogButton = screen.queryByTestId('rand-btn');
+    let noDog = screen.queryByTestId('current-dog');
+    expect(noDog).toEqual(null);
+    
+    userEvent.click(newDogButton);
+    
+    let retriever = await waitFor(() => screen.getByTestId('current-dog'))
+    
+    expect(retriever).toBeInTheDocument()
+    
+  })
+  
+  it('4. should be able to favorite a picture of a dog in homepage, and see it in the favorites page', async() => {
+    getNewDog.mockResolvedValueOnce('newDog1')
+    render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
+    
+    let newDogButton = screen.queryByTestId('rand-btn');
+    let saveDogButton = screen.queryByTestId('save-btn');
+    expect(saveDogButton).toEqual(null);
+    
+    userEvent.click(newDogButton);
+
+    saveDogButton = await waitFor(() => screen.getByTestId('save-btn'));
+    expect(saveDogButton).toBeInTheDocument();
+
+    userEvent.click(saveDogButton);
+
+    let faveButton = screen.queryByTestId('fav-btn');
+
+    userEvent.click(faveButton);
+
+    let retriever = await waitFor(() => screen.getByTestId('test-0'));
+    expect(retriever).toBeInTheDocument();
   })
 })
