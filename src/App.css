@@ -1,7 +1,6 @@
-.dogsResivour {
+.dogsReservoir {
   background-color: #3c4964;
   text-align: center;
-  height: 100vh
 }
 
 .App-header {
@@ -13,10 +12,14 @@
   font-size: calc(10px + 2vmin);
   color: white;
   /* height: 15vh; */
-  padding: 5vh
+  padding: 5vh;
+  margin-bottom: 5vh
 }
 
-.favorites {
+/* .favorites {
   height: 5vh;
   font-weight: bolder;
-}
+} */
+
+
+
