@@ -18,13 +18,17 @@ class App extends Component {
   }
 
   componentDidMount() {
-
+    this.setState({ 
+      currentDog: '',
+      savedDogs: [],
+      favoritesView: false
+    })
   }
 
   retrieveNewDog = async() => { 
     const newDog = await getNewDog();
-    this.setState({ currentDog: newDog.message })
-    return newDog.message
+    this.setState({ currentDog: newDog })
+    return newDog
   }
 
   saveDog = () => {
@@ -38,12 +42,12 @@ class App extends Component {
 
   render= () => {
     return (
-      <div className="dogsReservoir">
-        <header className="App-header">
+      <div className="dogsReservoir" data-testid="dogs-reservoir">
+        <header className="App-header" data-testid='app-header'>
           <h1>Dog Resivour</h1>
-          {this.state.favoritesView ? 
-          <Link to='/favorites' onClick={() => this.changeButton()}>Favorites</Link> :
-          <Link to='/' onClick={() => this.changeButton()}>Home</Link>}
+          {!this.state.favoritesView ? 
+          <Link to='/favorites' onClick={() => this.changeButton()} data-testid='fav-btn'>Favorites</Link> :
+          <Link to='/' onClick={() => this.changeButton()} data-testid='home-btn'>Home</Link>}
         </header>
         <Switch>
           <Route
@@ -72,7 +76,7 @@ class App extends Component {
             exact path='*'
             render={() => {
               return (
-                <div>hmm, this isn't the correct url</div>
+                <div data-testid='error'>hmm, this isn't the correct url</div>
               )
             }}
           />

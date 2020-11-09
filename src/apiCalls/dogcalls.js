@@ -7,5 +7,5 @@ export function getNewDog() {
       throw response
     }
   })
-  .then(data => data)
+  .then(data => data.message)
 }
