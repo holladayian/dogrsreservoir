@@ -7,16 +7,26 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      currentDog: '',
+      savedDogs: []
+    }
   }
 
   componentDidMount() {
 
   }
-  
+
   retrieveNewDog = async() => {
-    const newDog = await getNewDog()
+    const newDog = await getNewDog();
+    this.setState({ currentDog: newDog.message })
     return newDog.message
-    
+  }
+
+  saveDog = () => {
+    this.state.savedDogs.push(this.state.currentDog)
+    console.log(this.state.savedDogs)
   }
 
   render() {
@@ -33,6 +43,8 @@ class App extends Component {
               return (
                 <HomePage 
                 retrieveNewDog={this.retrieveNewDog}
+                currentDog={this.state.currentDog}
+                saveDog={this.saveDog}
                 />
               )
             }}
