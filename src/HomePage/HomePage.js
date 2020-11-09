@@ -6,19 +6,21 @@ export class HomePage extends Component {
     super(props)
     
     this.state = {
-      image: '',
-      name: ''
+      newDogImg: ''
     }
   }
 
-  setFakeYous = () => {
-    this.props.retrieveFakeYou()
+  setNewDog = async () => {
+    const newDogImg = await this.props.retrieveNewDog()
+    console.log(newDogImg)
+    this.setState({ newDogImg })
   }
 
   render = () => {
     return (
       <div className="homepage">
-        <button className="random" onClick={this.setFakeYous}>random</button>
+        <img src={this.state.newDogImg}></img>
+        <button className="random" onClick={this.setNewDog}>random</button>
         <button className="save">save</button>
       </div>
     )

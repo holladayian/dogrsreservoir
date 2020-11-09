@@ -23,9 +23,8 @@ class App extends Component {
   // }
 
   retrieveNewDog = async() => {
-    // make fetch call here
     const newDog = await getNewDog()
-    console.log('newDog', newDog)
+    return newDog.message
     
   }
 
@@ -37,7 +36,7 @@ class App extends Component {
           <button className="favorites">Favorites</button>
         </header>
         <HomePage 
-        retrieveFakeYou={this.retrieveNewDog}
+        retrieveNewDog={this.retrieveNewDog}
         />
       </div>
     );
