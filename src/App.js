@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { HomePage } from './HomePage/HomePage.js';
 import { getNewDog } from './apiCalls/dogcalls.js';
+import { Route } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -35,8 +36,15 @@ class App extends Component {
           <h1>Dog Resivour</h1>
           <button className="favorites">Favorites</button>
         </header>
-        <HomePage 
-        retrieveNewDog={this.retrieveNewDog}
+        <Route
+          exact path='/homepage'
+          render={() => {
+            return (
+              <HomePage 
+              retrieveNewDog={this.retrieveNewDog}
+              />
+            )
+          }}
         />
       </div>
     );
