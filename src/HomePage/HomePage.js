@@ -26,7 +26,7 @@ export class HomePage extends Component {
   render = () => {
     return (
       <div className="homepage">
-          <img src={this.props.currentDog} className="dog-image"></img>
+          {this.props.currentDog ? <img src={this.props.currentDog} className="dog-image"></img> : ''}
         <div className='button-case'>
           <button className="random" onClick={this.setNewDog}>random</button>
           <button className="save" onClick={e => this.saveDog(e)}>favorite</button>
