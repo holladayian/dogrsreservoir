@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-import './/HomePage.scss';
+import './HomePage.sass';
 
 export class HomePage extends Component {
   constructor(props) {
