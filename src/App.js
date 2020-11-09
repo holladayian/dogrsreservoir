@@ -38,12 +38,12 @@ class App extends Component {
 
   render= () => {
     return (
-      <div className="dogsResivour">
+      <div className="dogsReservoir">
         <header className="App-header">
           <h1>Dog Resivour</h1>
           {this.state.favoritesView ? 
           <Link to='/favorites' className="favorites" onClick={() => this.changeButton()}>Favorites</Link> :
-          <Link to='/' className="homepage" onClick={() => this.changeButton()}>Home</Link>}
+          <Link to='/' onClick={() => this.changeButton()}>Home</Link>}
         </header>
         <Switch>
           <Route

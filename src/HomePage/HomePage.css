@@ -1,3 +1,18 @@
+.homepage {
+  height: 70vh;
+  display:flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.button-case {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3vh
+}
+
 .dog-image {
-  height: 20vh
+  height: 20vh;
+  border: 2vh solid;
+  border-color: #202d47
 }
