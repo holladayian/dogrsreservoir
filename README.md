@@ -60,6 +60,14 @@ Favorites Page
 ### Final Product
 ---
 
+Landing page
+<img src='src/imgs/landingPage.png'/>
+
+Random dog
+<img src='src/imgs/randomFinal.png'/>
+
+Favorites Page
+<img src='src/imgs/finalFavorites.png'/>
 
 
 
