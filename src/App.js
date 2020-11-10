@@ -52,7 +52,7 @@ class App extends Component {
   render = () => {
     if(this.state.errorStatus) {
       return (
-        <div>`Error ${this.state.errorStatus}, ${this.state.errorMessage}`</div>
+        <div>Error {this.state.errorStatus}, {this.state.errorMessage}</div>
       )
     }
     return (
