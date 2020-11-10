@@ -16,7 +16,10 @@ export class HomePage extends Component {
   render = () => {
     return (
       <div className="homepage" data-testid='homepage'>
-          {this.props.currentDog ? <img src={this.props.currentDog} className="dog-image" data-testid='current-dog' alt='random-dog'></img> : ''}
+          {this.props.currentDog ? 
+          <img src={this.props.currentDog} className="dog-image" data-testid='current-dog' alt='random-dog'></img> : 
+          <p className='rand-note'>Click random to see some dogs!</p>
+          }
         <div className='button-case'>
           <button className="random" onClick={this.setNewDog} data-testid='rand-btn'>random</button>
           {this.props.currentDog ? <button className="save" onClick={e => this.saveDog(e)} data-testid='save-btn'>favorite</button> : ''}

@@ -16,3 +16,16 @@
   border: 2vh solid;
   border-color: #202d47
 }
+
+.button-case button {
+  border: 1px solid steelblue;
+  background-color: lightsteelblue;
+  padding: 5px;
+  text-decoration: none;
+  margin: 2px
+}
+
+.rand-note {
+  color: lightsteelblue;
+  font-weight: bold
+}
