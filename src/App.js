@@ -40,9 +40,12 @@ class App extends Component {
     }
   }
 
-  saveDog = () => {
-    this.state.savedDogs.push(this.state.currentDog)
-    console.log(this.state.savedDogs)
+  saveDog = (newDog) => {
+    if (!this.state.savedDogs.includes(newDog)) {
+      this.state.savedDogs.push(newDog)
+    } else {
+      alert('you\'ve already favorited this pup!')
+    }
   }
 
   changeButton = () => {
