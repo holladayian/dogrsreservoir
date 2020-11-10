@@ -1,8 +1,12 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import './Favorites.css';
 
 export const Favorites = (props) => {
+  if(!props.favoritesView) {
+    return (<Redirect to='/'/>)
+  }
   
   const showDogs = () => {
     if(props.savedDogs.length) {
@@ -22,5 +26,6 @@ export const Favorites = (props) => {
 }
 
 Favorites.propTypes = {
-  savedDogs: propTypes.array
+  savedDogs: propTypes.array,
+  favoritesView: propTypes.bool
 }

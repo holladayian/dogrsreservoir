@@ -100,6 +100,7 @@ class App extends Component {
               return (
                 <Favorites 
                 savedDogs={this.state.savedDogs}
+                favoritesView={this.state.favoritesView}
                 />
               )
             }}
