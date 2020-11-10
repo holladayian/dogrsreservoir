@@ -13,7 +13,9 @@ class App extends Component {
     this.state = {
       currentDog: '',
       savedDogs: [],
-      favoritesView: false
+      favoritesView: false,
+      errorMessage: '',
+      errorStatus: ''
     }
   }
 
@@ -21,14 +23,21 @@ class App extends Component {
     this.setState({ 
       currentDog: '',
       savedDogs: [],
-      favoritesView: false
+      favoritesView: false,
+      errorMessage: '',
+      errorStatus: ''
     })
   }
 
   retrieveNewDog = async() => { 
+    try {
     const newDog = await getNewDog();
-    this.setState({ currentDog: newDog })
+    this.setState({ currentDog: newDog, errorMessage: '', errorStatus: '' })
     return newDog
+    } catch(error) {
+      console.log(error)
+      this.setState({ errorMessage: error.message, errorStatus: error.status })
+    }
   }
 
   saveDog = () => {
@@ -40,7 +49,12 @@ class App extends Component {
     this.setState( {favoritesView: !this.state.favoritesView} )
   }
 
-  render= () => {
+  render = () => {
+    if(this.state.errorStatus) {
+      return (
+        <div>Error {this.state.errorStatus}, {this.state.errorMessage}</div>
+      )
+    }
     return (
       <div className="dogsReservoir" data-testid="dogs-reservoir">
         <header className="App-header" data-testid='app-header'>
