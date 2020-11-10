@@ -60,8 +60,23 @@ class App extends Component {
         <header className="App-header" data-testid='app-header'>
           <h1>Dog Resivour</h1>
           {!this.state.favoritesView ? 
-          <Link to='/favorites' onClick={() => this.changeButton()} data-testid='fav-btn'>Favorites</Link> :
-          <Link to='/' onClick={() => this.changeButton()} data-testid='home-btn'>Home</Link>}
+            <Link 
+              to='/favorites' 
+              className='link' 
+              onClick={() => this.changeButton()} 
+              data-testid='fav-btn'
+            >
+              Favorites
+            </Link> :
+            <Link 
+              to='/' 
+              className='link' 
+              onClick={() => this.changeButton()} 
+              data-testid='home-btn'
+            >
+              Home
+            </Link>
+          }
         </header>
         <Switch>
           <Route
