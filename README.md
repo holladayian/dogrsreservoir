@@ -2,6 +2,7 @@
 [![Forks][forks-shield]](https://github.com/holladayian/dogrsreservoir/network/members)
 [![Issues][issues-shield]](https://github.com/holladayian/dogrsreservoir/issues)
 [![Stars][stars-shield]](https://github.com/holladayian/dogrsreservoir)
+[![Build][build-shield]](https://github.com/holladayian/dogrsreservoir)
 
 ## DogsReservoir
 
@@ -104,6 +105,7 @@ travisCI
 
 [contributors-shield]: https://img.shields.io/github/contributors/holladayian/dogrsreservoir.svg?style=flat-square
 [contributors-url]: https://github.com/holladayian/dogrsreservoir/graphs/contributors
+[build-shield]: https://img.shields.io/travis/holladayian/dogrsreservoir/test/travisCI.svg?style=flat-square
 [forks-shield]: https://img.shields.io/github/forks/holladayian/dogrsreservoir.svg?style=flat-square
 [forks-url]: https://github.com/holladayian/dogrsreservoir/network/members
 [stars-shield]: https://img.shields.io/github/stars/holladayian/dogrsreservoir.svg?style=flat-square 
