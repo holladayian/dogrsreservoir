@@ -91,6 +91,7 @@ React
 Router
 Asynchronous JavaScript
 Jest
+travisCI
 ```
 <br><br>
 <br><br>
